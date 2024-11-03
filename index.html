@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente Virtual</title>
+    <style>
+        body {
+        font-size:18px;            font-family: Arial, serif;
+            background-image: linear-gradient(to right,#ff0018ff,#ff40b6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .input-box {
+            margin-bottom: 10px;
+            display: flex;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .response {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e0f7fa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Assistente Virtual</h2>
+        <div class="input-box">
+            <input type="text" id="userInput" placeholder="Digite sua pergunta aqui...">
+            <button onclick="responder()">Enviar</button>
+        </div>
+        <div id="response" class="response"></div>
+    </div>
+
+    <script>
+        function responder() {
+            const input = document.getElementById('userInput').value.toLowerCase();
+            const responseDiv = document.getElementById('response');
+
+            let resposta = "Desculpe, não sei como responder a isso.";
+
+            if (input.includes("como você está")) {
+                resposta = "Estou bem, obrigado por perguntar!";
+               } if(input.includes("cona")){
+                resposta = "Não seja rude!";
+            } else if (input.includes("qual é o seu nome")) {
+                resposta = "Sou um assistente virtual criado em JavaScript.";
+            } else if (input.includes("o que você pode fazer")) {
+                resposta = "Posso responder a perguntas simples e mostrar funcionalidades básicas.";
+            }
+
+            responseDiv.textContent = resposta;
+        }
+    </script>
+</body>
+</html>
